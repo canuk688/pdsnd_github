@@ -43,7 +43,6 @@ def get_filters():
                 print("Oops you may have had a typo or extra space, here try again...")
                 day = input("Which day of the week would you like to look at (all, monday, tuesday, ... sunday)?: ")
                 continue
-
         break
 
     print('-' * 40)
@@ -195,13 +194,11 @@ def display_data(df, city):
         if start_loc > len(df):
             break
 
-
+# Here I added city as an input to user_stats to handle be able to handle washington state not having gender/bdate data available.
 def main():
-    # Here I added city as an input to user_stats to handle be able to handle washington state not having gender/bdate data available.
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
-
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
@@ -210,7 +207,6 @@ def main():
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
-
 
 if __name__ == "__main__":
     main()
