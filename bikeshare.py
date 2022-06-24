@@ -4,11 +4,12 @@ import time
 import datetime as dt
 import pandas as pd
 import numpy as np
-
+#Datasets referenced below for which file is queried
 CITY_DATA = {'chicago': 'chicago.csv',
              'new york city': 'new_york_city.csv',
              'washington': 'washington.csv'}
 
+#This initial function sets up filters on dataset before running statistics
 def get_filters():
     MONTH_data = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
     DAY_data = ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
@@ -42,6 +43,7 @@ def get_filters():
                 print("Oops you may have had a typo or extra space, here try again...")
                 day = input("Which day of the week would you like to look at (all, monday, tuesday, ... sunday)?: ")
                 continue
+
         break
 
     print('-' * 40)
@@ -177,7 +179,7 @@ def user_stats(df, city):
     print("See the most common year of birth: ", commonage)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-' * 30)
+    print('-' * 40)
 
 
 # Added function to display 5 rows of data per user request, stop if no and starting location cant be greater than the number of rows in the dataframe
@@ -193,11 +195,13 @@ def display_data(df, city):
         if start_loc > len(df):
             break
 
-# Here I added city as an input to user_stats to handle be able to handle washington state not having gender/bdate data available.
+
 def main():
+    # Here I added city as an input to user_stats to handle be able to handle washington state not having gender/bdate data available.
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
+
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
@@ -206,6 +210,7 @@ def main():
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
+
 
 if __name__ == "__main__":
     main()
