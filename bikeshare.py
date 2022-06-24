@@ -9,7 +9,6 @@ CITY_DATA = {'chicago': 'chicago.csv',
              'new york city': 'new_york_city.csv',
              'washington': 'washington.csv'}
 
-
 def get_filters():
     MONTH_data = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
     DAY_data = ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
@@ -178,7 +177,7 @@ def user_stats(df, city):
     print("See the most common year of birth: ", commonage)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-' * 40)
+    print('-' * 30)
 
 
 # Added function to display 5 rows of data per user request, stop if no and starting location cant be greater than the number of rows in the dataframe
