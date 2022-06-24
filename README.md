@@ -6,7 +6,7 @@ Include the date you created this project and README file.
 ### Udacity Bikeshare Python Project
 Replace the Project Title
 
-### The script asks a user which city data set they would like to query, asks them some questions on the month/day, then presents statistics on bike sharing for that city.
+### The script asks user which city data set they would like to query, asks them some questions on the month/day, then presents statistics on bike sharing for that city.
 Describe what your project is about and what it does
 
 ### chicago.csv, new_york_city.csv, washington.csv
