@@ -2,12 +2,12 @@ import time
 import datetime as dt
 import pandas as pd
 import numpy as np
-
+#Datasets referenced below for which file is queried
 CITY_DATA = {'chicago': 'chicago.csv',
              'new york city': 'new_york_city.csv',
              'washington': 'washington.csv'}
 
-
+#This initial function sets up filters on dataset before running statistics
 def get_filters():
     MONTH_data = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
     DAY_data = ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
@@ -212,4 +212,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
